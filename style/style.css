@@ -1,0 +1,263 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+    --primary: #be3e5c;
+  }
+*::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+*::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 50px #efefef;
+  border-radius: 10px;
+  color: transparent;
+}
+*::-webkit-scrollbar-thumb {
+  background: var(--primary);
+  border-radius: 10px;
+}
+@font-face {
+  font-family: "Bebas";
+  src: url("BebasNeue-Regular.ttf");
+}
+@font-face {
+  font-family: "Jost";
+  src: url("Jost-Regular.ttf");
+}
+@font-face {
+  font-family: "Jost Bold";
+  src: url("Jost-Bold.ttf");
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  position: relative;
+}
+.divider {
+  width: 40%;
+  height: 5px;
+  border-radius: 3px;
+  background-color: var(--primary);
+}
+.col-title {
+  width: 30%;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  padding-top: 50px;
+  padding-right: 100px;
+  padding-left: 100px;
+  gap: 30px;
+}
+.col-title > h1 {
+  font-family: "Bebas";
+  font-size: 40px;
+  text-transform: uppercase;
+  color: var(--primary);
+  word-spacing: 5px;
+  letter-spacing: 5px;
+}
+.col-title > p {
+  font-family: "Jost";
+  line-height: 30px;
+  word-spacing: 3px;
+  letter-spacing: 2px;
+}
+.img-content {
+  width: 70%;
+}
+.img-content {
+  position: relative;
+  height: 600px;
+}
+.principale {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  transform: skewY(-15deg);
+  transform-origin: top left;
+  background-color: rgba(190, 62, 92, 0.8);
+  overflow: hidden;
+  z-index: -1;
+}
+.shadow {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  transform: skewY(-15deg);
+  transform-origin: top left;
+}
+.principale::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0.2;
+  top: 0;
+  left: 0;
+  background-image: url("/assets/img-content.jpg");
+  background-size: cover;
+  transform: skewY(15deg);
+  transform-origin: top left;
+}
+.shadow::after {
+  content: "";
+  position: absolute;
+  width: 15%;
+  height: 35px;
+  bottom: -35px;
+  right: 0;
+  background: rgb(51, 50, 50);
+}
+.portrait {
+  width: 620px;
+  height: 620px;
+  position: absolute;
+  top: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.portrait > div {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 415px;
+  height: 415px;
+  border-radius: 100%;
+  overflow: hidden;
+}
+.portrait > div > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.img-footer {
+  width: 30%;
+  position: relative;
+  height: 400px;
+  overflow: hidden;
+}
+.footer-principale {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  transform: skewY(-15deg);
+  transform-origin: top right;
+  overflow: hidden;
+  z-index: -1;
+}
+.footer-principale::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: url("/assets/img-footer.jpg");
+  background-size: cover;
+  transform: skewY(15deg);
+  transform-origin: top right;
+  filter: grayscale(100%);
+}
+.banniere {
+  position: absolute;
+  width: calc(100% - 100px);
+  height: 60%;
+  top: 0px;
+  right: 100px;
+  transform: skewY(-15deg);
+  transform-origin: top right;
+  background-color: rgba(190, 62, 92, 0.8);
+}
+.banniere > div {
+  padding-top: 80px;
+  padding-left: 50px;
+  width: 100%;
+  height: 100%;
+  transform: skewY(15deg);
+  transform-origin: top right;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.banniere > div > p {
+  color: white;
+  font-size: 30px;
+  letter-spacing: 3px;
+  font-family: "Jost";
+  font-weight: bolder;
+}
+.row-footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 70%;
+  height: 400px;
+  position: relative;
+  padding: 100px;
+  overflow: hidden;
+}
+.banniere-footer {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 80%;
+  height: 180px;
+  transform: skewY(-15deg);
+  transform-origin: top right;
+  background-color: var(--primary);
+}
+.col {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.col > .contact {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.col > h1 {
+  font-family: "Jost Bold";
+  font-weight: bolder;
+}
+.col > h1:nth-child(2) {
+  color: var(--primary);
+}
+.row > div > p {
+  font-family: "Jost";
+  font-size: 20px;
+}
+.row > div > a {
+  font-family: "Jost";
+  font-size: 20px;
+  color: black;
+}
+.row {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+.icon-img {
+  background: var(--primary);
+  width: 50px;
+  height: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 100%;
+}
+.icon-img > img {
+  width: 30px;
+  height: 30px;
+}
