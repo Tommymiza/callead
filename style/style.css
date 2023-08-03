@@ -4,8 +4,8 @@
   box-sizing: border-box;
 }
 :root {
-    --primary: #be3e5c;
-  }
+  --primary: #be3e5c;
+}
 *::-webkit-scrollbar {
   width: 7px;
   height: 7px;
@@ -32,6 +32,9 @@
   src: url("Jost-Bold.ttf");
 }
 
+body {
+  overflow-x: hidden;
+}
 .container {
   display: flex;
   flex-direction: row;
@@ -39,7 +42,7 @@
   position: relative;
 }
 .divider {
-  width: 40%;
+  width: 100px;
   height: 5px;
   border-radius: 3px;
   background-color: var(--primary);
@@ -65,6 +68,7 @@
 }
 .col-title > p {
   font-family: "Jost";
+  font-size: 20px;
   line-height: 30px;
   word-spacing: 3px;
   letter-spacing: 2px;
@@ -85,6 +89,12 @@
   background-color: rgba(190, 62, 92, 0.8);
   overflow: hidden;
   z-index: -1;
+}
+#logo {
+  position: absolute;
+  top: 50px;
+  right: 50px;
+  z-index: 2;
 }
 .shadow {
   position: absolute;
@@ -260,4 +270,104 @@
 .icon-img > img {
   width: 30px;
   height: 30px;
+}
+
+.container.mission {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 100px 100px 0 100px;
+  gap: 50px;
+}
+.container.mission > .col {
+  max-width: 320px;
+  gap: 20px;
+}
+.container.mission > .col > .divider {
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+.container.mission > .col ul {
+  margin-left: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  font-family: "Jost";
+  font-size: 20px;
+}
+.container.mission > .col > h1 {
+  font-family: "Bebas";
+  font-size: 40px;
+  text-transform: uppercase;
+  color: var(--primary);
+  word-spacing: 5px;
+  letter-spacing: 5px;
+}
+.icon-mission {
+  border: rgb(230, 228, 228) 2px solid;
+  border-radius: 100%;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.icon-mission img {
+  margin-left: 5px;
+  height: 25px;
+}
+.col{
+  display: flex;
+  flex-direction: column;
+}
+.row{
+  display: flex;
+  flex-direction: row;
+}
+.container.mission > .col > .row {
+  gap: 20px;
+}
+.icon-filled{
+  background: var(--primary);
+  border-radius: 100%;
+  width: 80px;
+  height: 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.icon-filled img{
+  height: 40px;
+  width: 80px;
+  object-fit: contain;
+}
+.container.mission > .col > .row >.col{
+  gap: 10px;
+}
+.container.mission > .col > .row >.col>h1{
+  color: var(--primary);
+  font-family: "Jost";
+  font-weight: lighter;
+  text-transform: uppercase;
+  font-size: 25px;
+}
+.img-footer.mission{
+  width: 70%;
+  position: relative;
+  height: 600px;
+  overflow: hidden;
+}
+.banniere.mission{
+  width: 50%;
+  right: 50%;
+}
+.banniere.mission > div > p{
+  font-size: 45px;
+  margin-top: 30px;
+}
+.footer-principale.mission::before{
+  background-image: url("/assets/work.jpg");
+  filter: none;
 }
